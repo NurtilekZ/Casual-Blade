@@ -24,6 +24,8 @@
 
 # Visual Studio cache directory
 .vs/
+# Default ignored files
+.idea/
 
 # Gradle cache directory
 .gradle/
