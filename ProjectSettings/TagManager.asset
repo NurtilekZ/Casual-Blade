@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Blade
+  - Enemy
+  - Heavy
+  - Booster
+  - Zone
+  - Drop
   layers:
   - Default
   - TransparentFX
