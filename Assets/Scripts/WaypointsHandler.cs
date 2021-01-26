@@ -13,19 +13,20 @@ public class WaypointsHandler : MonoBehaviour
 
     public void PlaceWaypoints()
     {
-        int side;
+        int direction;
         for (int i = 1; i < path.m_Waypoints.Length; i++)
         {
-            side = Random.Range(0, 2);
-            if (side == 0)
+            direction = Random.Range(0, 2);
+            if (direction == 0)
             {
                 path.m_Waypoints[i].position =
-                    path.m_Waypoints[i - 1].position + new Vector3(0, ScreenSize.GetScreenToWorldHeight, 0);
+                    path.m_Waypoints[i - 1].position + new Vector3(0, Screen.height / 200, 0);
             }
             else
             {
+                var side = Random.Range(1, 3);
                 path.m_Waypoints[i].position =
-                    path.m_Waypoints[i - 1].position + new Vector3(ScreenSize.GetScreenToWorldWidth, 0, 0);
+                    path.m_Waypoints[i - 1].position + new Vector3(Mathf.Pow(-1, side) * (Screen.width / 200), 0, 0);
             }
         }
     }

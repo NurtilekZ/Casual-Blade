@@ -25,8 +25,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI currentLevel;
     public TextMeshProUGUI finishText;
     public Slider levelSlider;
-    
-    
+
     [HideInInspector] public int level = 1;
     [HideInInspector] public BladesHolder bladesHolder;
     [HideInInspector] public CinemachineTrackedDolly cameraTrackingDolly;
@@ -158,7 +157,7 @@ public class GameManager : MonoBehaviour
         LoadPlayerData();
         ObjectPooler.Instance.DisableAllPooledObjects();
         finishCanvasGroup.blocksRaycasts = isTouchedFirstTime = false;
-        levelSlider.value = finishCanvasGroup.alpha = (int) (cameraTrackingDolly.m_PathPosition = 0);
+        levelSlider.value = finishCanvasGroup.alpha = cameraTrackingDolly.m_PathPosition = 0;
         FindObjectOfType<PlayerController>().transform.position = transform.position;
         bladesHolder.SetupBlades(6);
         bladesHolder.GetComponent<Animator>().speed = 1;
